@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Rasgo da Fenda — Aegis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section id="loginScreen" class="screen forest">
+  <div class="login-box">
+    <h1>RASGO DA FENDA</h1>
+    <p>Aegis — O Despertar</p>
+    <input id="fakeUser" placeholder="Digite seu nome">
+    <button onclick="enterApp()">Entrar</button>
+  </div>
+</section>
+
+<section id="appScreen" class="hidden">
+  <header>
+    <h2>Rasgo da Fenda</h2>
+    <nav>
+      <button onclick="showScreen('menu')">Menu</button>
+      <button onclick="showScreen('create')">Criar</button>
+      <button onclick="showScreen('characters')">Personagens</button>
+      <button onclick="showScreen('dados')">Dados</button>
+    </nav>
+  </header>
+
+  <section id="menu" class="screen forest-night">
+    <h1>Bem-vindo</h1>
+  </section>
+
+  <section id="create" class="screen hidden">
+    <div class="paper">
+      <h2 id="formTitle">Criar Personagem</h2>
+
+      <div id="step1">
+        <input id="charName" placeholder="Nome do Personagem">
+        <input id="playerName" placeholder="Nome do Jogador">
+        <textarea id="appearance" placeholder="Aparência"></textarea>
+        <textarea id="history" placeholder="História"></textarea>
+        <textarea id="goals" placeholder="Ambições"></textarea>
+        <button onclick="goToSkills()">Prosseguir</button>
+      </div>
+
+      <div id="step2" class="hidden">
+        <h3>Perícias</h3>
+        <div id="skillsContainer"></div>
+        <p>Pontos restantes: <span id="pointsLeft"></span></p>
+        <button onclick="finishCharacter()">Salvar</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="characters" class="screen hidden">
+    <div class="paper">
+      <h2>Personagens</h2>
+      <div id="characterList"></div>
+    </div>
+  </section>
+
+  <section id="dados" class="screen hidden">
+    <div class="paper">
+      <h2>Dados</h2>
+      <select id="diceCharacter"></select>
+      <div id="diceSkills"></div>
+      <div id="diceResult"></div>
+    </div>
+  </section>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
